@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,3 +172,36 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+=======
+<!-- LOGIN POPUP -->
+<div id="login-popup" style="display:none; position:fixed; top:20%; left:35%; background:#fff; padding:20px; border-radius:10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); z-index:999;">
+    <h3>Login</h3>
+    <input type="text" placeholder="Username" id="username" style="display:block; margin-bottom:10px; padding:5px; width:100%;">
+    <input type="password" placeholder="Password" id="password" style="display:block; margin-bottom:10px; padding:5px; width:100%;">
+    <button onclick="login()">Login</button>
+    <button onclick="closeLogin()" style="margin-left:10px;">Close</button>
+</div>
+
+<script>
+  document.querySelector('.btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('login-popup').style.display = 'block';
+  });
+
+  function closeLogin() {
+    document.getElementById('login-popup').style.display = 'none';
+  }
+
+  function login() {
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+
+    if (user === "admin" && pass === "1234") {
+      alert("Login successful!");
+      closeLogin();
+    } else {
+      alert("Invalid credentials!");
+    }
+  }
+</script>
+>>>>>>> 8dbcd77f6feda9d7d2b8ee3f5e05cbfd5688462a
